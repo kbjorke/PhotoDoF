@@ -56,23 +56,33 @@ if __name__=="__main__":
     focl_array = np.array([16, 20, 30, 40, 50, 100, 210])
     
     dist_array2D = np.array([
-        [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-        [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-        [0.5, 1, 1.5, 2, 3, 5, 8, 15],
-        [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-        [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-        [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-        [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]
+        [0.5, 1, 1.5, 2, 2.5, 3, 5, 8],
+        [0.5, 1, 1.5, 2, 3, 5, 8, 10],
+        [0.5, 1, 1.5, 2, 3, 5, 10, 20],
+        [0.5, 1, 1.5, 2, 3, 5, 10, 30],
+        [1.0, 2, 3, 5, 10, 20, 30, 50],
+        [1.0, 2, 5, 10, 20, 50, 100, 200],
+        [2, 5, 10, 50, 100, 200, 500, 1000]
+        ])
+    
+    F_array2D = np.array([
+        [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22],
+        [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22],
+        [1.4, 2, 2.8, 4, 5.6, 8, 11, 16, 22],
+        [4, 5.6, 8, 11, 16, 22, 32],
+        [4, 5.6, 8, 11, 16, 22, 32],
+        [5.6, 8, 11, 16, 22, 32],
+        [5.6, 8, 11, 16, 22, 32],
         ])
 
     dof_zrange_array = np.array([
         (0.01, 30.0),
         (0.01, 30.0),
         (0.01, 30.0),
-        (0.01, 30.0),
-        (0.01, 30.0),
-        (0.01, 30.0),
-        (0.01, 30.0),
+        (0.005, 30.0),
+        (0.005, 30.0),
+        (0.001, 30.0),
+        (0.001, 30.0),
         ])
 
     nF = len(F_array)
@@ -133,6 +143,7 @@ if __name__=="__main__":
     #l = 2
     for l in range(nfocl):
         focl = focl_array[l]
+        nF = len(F_array2D[l])
 
         h_dof = TH2D("hist_dof_focl%d" %focl, "hist_dof_focl%d" %focl, ndist, 0, ndist, nF, 0, nF) 
         h_fnrat = TH2D("hist_fnrat_focl%d" %focl, "hist_fnrat_focl%d" %focl, ndist, 0, ndist, nF, 0, nF) 
@@ -150,8 +161,8 @@ if __name__=="__main__":
             h_dof.GetXaxis().SetBinLabel(i+1, "%3.1f m" % dist_array2D[l][i])
             h_fnrat.GetXaxis().SetBinLabel(i+1, "%3.1f m" % dist_array2D[l][i])
         for j in range(nF):
-            h_dof.GetYaxis().SetBinLabel(nF-j, "f/%3.1f" % F_array[j])
-            h_fnrat.GetYaxis().SetBinLabel(nF-j, "f/%3.1f" % F_array[j])
+            h_dof.GetYaxis().SetBinLabel(nF-j, "f/%3.1f" % F_array2D[l][j])
+            h_fnrat.GetYaxis().SetBinLabel(nF-j, "f/%3.1f" % F_array2D[l][j])
 
         canvas2 = TCanvas("canvas2", "canvas2", 1500, 900)
         canvas2.SetLogz()
