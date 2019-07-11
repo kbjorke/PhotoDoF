@@ -63,8 +63,17 @@ if __name__=="__main__":
         [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
         [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
         [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]
-        ]
-        )
+        ])
+
+    dof_zrange_array = np.array([
+        (0.01, 30.0),
+        (0.01, 30.0),
+        (0.01, 30.0),
+        (0.01, 30.0),
+        (0.01, 30.0),
+        (0.01, 30.0),
+        (0.01, 30.0),
+        ])
 
     nF = len(F_array)
     ndist = len(dist_array)
@@ -165,7 +174,8 @@ if __name__=="__main__":
         h_dof.GetYaxis().SetTitleOffset(0.9)
         h_dof.GetYaxis().SetLabelSize(0.05)
         h_dof.GetYaxis().CenterTitle()
-        h_dof.GetZaxis().SetRangeUser(0.01, 30.0)
+        #h_dof.GetZaxis().SetRangeUser(0.01, 30.0)
+        h_dof.GetZaxis().SetRangeUser(dof_zrange_array[l][0], dof_zrange_array[l][1])
         h_dof.GetZaxis().SetNoExponent()
         h_dof.GetZaxis().SetTitle("Depth of field [m]")
         h_dof.GetZaxis().SetTitleSize(0.05)
