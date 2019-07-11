@@ -118,7 +118,7 @@ if __name__=="__main__":
     h_H.Draw("TEXT same")
     h_H2.Draw("TEXT same")
 
-    canvas1.SaveAs("hyperfocal-distance.eps")
+    canvas1.SaveAs("pdf/img/hyperfocal-distance.eps")
 
     #focl = 30
     #l = 2
@@ -175,7 +175,7 @@ if __name__=="__main__":
         h_dof.Draw("COLZ X+")
         h_dof.Draw("TEXT same")
         
-        canvas2.SaveAs("depth-of-field_focl%d.eps" %focl)
+        canvas2.SaveAs("pdf/img/depth-of-field_focl%d.eps" %focl)
 
         canvas3 = TCanvas("canvas3", "canvas3", 1500, 900)
         canvas3.SetLogz()
@@ -209,7 +209,7 @@ if __name__=="__main__":
         h_fnrat.Draw("COLZ X+")
         h_fnrat.Draw("TEXT same")
         
-        canvas3.SaveAs("far-near-ratio_focl%d.eps" %focl)
+        canvas3.SaveAs("pdf/img/far-near-ratio_focl%d.eps" %focl)
 
         #raw_input("")
 
