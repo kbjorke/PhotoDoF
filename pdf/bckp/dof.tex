@@ -9,9 +9,44 @@
 
 \usepackage[export]{adjustbox}
 
+\usefonttheme[onlymath]{serif}
+
 \setbeamertemplate{navigation symbols}{}
 
 \begin{document}
+
+%%% Introduction
+
+\begin{frame}[plain]{}
+  \vspace{3ex}
+  \begin{center} \Huge \bf
+    Depth of Field document
+  \end{center}
+  \begin{center} \Large \bf
+    by Kristian L. Bjørke
+  \end{center}
+
+  {\large \bf
+    Introduction:
+  }
+
+  {\large \bf
+    Parameters:
+  }
+
+  {
+    \small
+    $H$: Hyperfocal distance
+
+    $f$: Focal length ($\times 1.53$ crop factor for aps-c)
+
+    $N$: F-number (aperature diameter $\frac{f}{N}$)
+
+    $D$: Focus distance 
+
+    $c$: Circle of confusion (CoC) limit (determines acceptable sharpness)
+  }
+\end{frame}
 
 %%% Hyperfocal distance
 
@@ -20,6 +55,11 @@
   \begin{center} \LARGE \bf
     Hyperfocal distance
   \end{center}
+
+  { \Large
+    $$\mathit{H = \frac{f^2}{Nc} + f}$$
+  }
+
 \end{frame}
 
 \begin{frame}[plain]{}
@@ -37,6 +77,16 @@
   \begin{center} \LARGE \bf
     Depth of Field
   \end{center}
+
+  {\Large 
+    $$\mathit{d = d_1 + d_2 = \frac{2NcD^2f^2}{f^4 - N^2c^2D^2}}$$
+  }
+
+  \vspace{2ex}
+  {\scriptsize
+    $$\mathit{d_1 = \frac{NcD^2}{f^2 + NCD}}, \, \, \, \mathit{d_2 = \frac{NcD^2}{f^2 - NCD}}$$
+  }
+
 \end{frame}
 
 \begin{frame}[plain]{}
@@ -102,6 +152,11 @@
   \begin{center} \LARGE \bf
     Far-Near ratio
   \end{center}
+
+  {\Large 
+    $$\mathit{\frac{d_2}{d_1} = \frac{f^2 + NcD}{f^2 - NcD}}$$
+  }
+
 \end{frame}
 
 \begin{frame}[plain]{}

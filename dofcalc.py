@@ -79,10 +79,10 @@ if __name__=="__main__":
         (0.01, 30.0),
         (0.01, 30.0),
         (0.01, 30.0),
-        (0.005, 30.0),
-        (0.005, 30.0),
-        (0.001, 30.0),
-        (0.001, 30.0),
+        (0.005, 40.0),
+        (0.005, 40.0),
+        (0.001, 200.0),
+        (0.001, 200.0),
         ])
 
     nF = len(F_array)
@@ -175,7 +175,7 @@ if __name__=="__main__":
         gStyle.SetPaintTextFormat(".2f m")
         gStyle.SetTextFont(40)
         h_dof.SetTitle("")
-        h_dof.GetXaxis().SetTitle("Focus length")
+        h_dof.GetXaxis().SetTitle("Focus distance")
         h_dof.GetXaxis().CenterTitle()
         h_dof.GetXaxis().SetTitleSize(0.05)
         h_dof.GetXaxis().SetTitleOffset(0.9)
@@ -209,7 +209,7 @@ if __name__=="__main__":
         gStyle.SetPaintTextFormat(".2f")
         gStyle.SetTextFont(40)
         h_fnrat.SetTitle("")
-        h_fnrat.GetXaxis().SetTitle("Focus length")
+        h_fnrat.GetXaxis().SetTitle("Focus distance")
         h_fnrat.GetXaxis().CenterTitle()
         h_fnrat.GetXaxis().SetTitleSize(0.05)
         h_fnrat.GetXaxis().SetTitleOffset(0.9)
