@@ -30,6 +30,11 @@
     Introduction:
   }
 
+  \hspace{2em}Calculations and tables of depth of field (focus depth) and hyperfocal distance for
+
+  \hspace{2em}various camera settings for the Sony $\alpha$\hspace{0.1em}6000 (aps-c).
+  
+
   {\large \bf
     Parameters:
   }
@@ -42,8 +47,9 @@
         $H$ : & Hyperfocal distance \\
         $f$ : & Focal length ($\times 1.53$ crop factor for aps-c) \\
         $N$ : & F-number (aperature diameter $\frac{f}{N}$) \\
-        $D$ : & Focus distance \\ 
-        $c$ : & Circle of confusion (CoC) limit (determines acceptable sharpness)
+        $D$ : & Focus distance (distance to focus point) \\ 
+        $c$ : & Circle of confusion (CoC) limit (determines acceptable sharpness) \\
+        \ & $c$ = 0.036 mm used (suitable for 15x10cm print viewed at 25cm distance)
       \end{tabular}
     \end{table}
   }
@@ -57,12 +63,21 @@
     Hyperfocal distance
   \end{center}
 
-  { \Large
-    $$\mathit{H = \frac{f^2}{Nc} + f}$$
-  }
+  \begin{columns}
+  \begin{column}{0.40\textwidth}
+    { \Large
+      $$\mathit{H = \frac{f^2}{Nc} + f}$$
+    }
 
-  \includegraphics[center,width=1.00\textwidth]{img/hyperfocal-distance-example-cell.pdf}
+    \center
+    \includegraphics[width=0.80\textwidth]{img/hyperfocal-distance-example-cell.pdf}
+  \end{column}
+  \begin{column}{0.60\textwidth}
+    \includegraphics[width=0.80\textwidth]{img/lensfocus-hyperfocal-1.pdf}
 
+    \includegraphics[width=0.80\textwidth]{img/lensfocus-hyperfocal-2.pdf}
+  \end{column}
+  \end{columns}
 
 \end{frame}
 
@@ -70,7 +85,7 @@
   \vspace{1ex}
   \centering
   Hyperfocal distance | Sony $\alpha$\hspace{0.1em}6000 (aps-c) | CoC = 0.036 mm
-  
+
   \includegraphics[center,width=0.78\textwidth]{img/hyperfocal-distance.eps}
 \end{frame}
 
@@ -82,6 +97,8 @@
     Depth of Field
   \end{center}
 
+  \begin{columns}
+  \begin{column}{0.40\textwidth}
   {\Large 
     $$\mathit{d = d_1 + d_2 = \frac{2NcD^2f^2}{f^4 - N^2c^2D^2}}$$
   }
@@ -90,6 +107,12 @@
   {\scriptsize
     $$\mathit{d_1 = \frac{NcD^2}{f^2 + NCD}}, \, \, \, \mathit{d_2 = \frac{NcD^2}{f^2 - NCD}}$$
   }
+  \end{column}
+  \begin{column}{0.60\textwidth}
+    \center
+    \includegraphics[width=0.90\textwidth]{img/lensfocus-dof.pdf}
+  \end{column}
+  \end{columns}
 
 \end{frame}
 
@@ -157,9 +180,17 @@
     Far-Near ratio
   \end{center}
 
+  \begin{columns}
+  \begin{column}{0.40\textwidth}
   {\Large 
     $$\mathit{\frac{d_2}{d_1} = \frac{f^2 + NcD}{f^2 - NcD}}$$
   }
+  \end{column}
+  \begin{column}{0.60\textwidth}
+    \center
+    \includegraphics[width=0.90\textwidth]{img/lensfocus-dof.pdf}
+  \end{column}
+  \end{columns}
 
 \end{frame}
 
